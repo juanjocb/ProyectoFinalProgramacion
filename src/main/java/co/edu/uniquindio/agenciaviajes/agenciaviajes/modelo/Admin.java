@@ -174,7 +174,8 @@ public class Admin implements Serializable {
                     paqueteTuristico.setDuracion(paqueteActualizado.getDuracion());
                     paqueteTuristico.setServiciosAdi(paqueteActualizado.getServiciosAdi());
                     paqueteTuristico.setPrecio(paqueteActualizado.getPrecio());
-                    paqueteTuristico.setFecha(paqueteActualizado.getFecha());
+                    paqueteTuristico.setFechaInicio(paqueteActualizado.getFechaInicio());
+                    paqueteTuristico.setFechaFinal(paqueteActualizado.getFechaFinal());
                     paqueteTuristico.setCupoMaximo(paqueteActualizado.getCupoMaximo());
                     break;
                 }

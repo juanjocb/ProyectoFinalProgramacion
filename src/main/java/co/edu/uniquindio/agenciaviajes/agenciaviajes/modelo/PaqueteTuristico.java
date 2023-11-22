@@ -5,6 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -17,9 +18,10 @@ public class PaqueteTuristico {
     private Destino destino;
     private String nombre;
     private int duracion;
-    private ArrayList<String> serviciosAdi;
+    private String serviciosAdi;
     private double precio;
-    private Date fecha;
+    private LocalDate fechaInicio;
+    private LocalDate fechaFinal;
     private int cupoMaximo;
 
 }

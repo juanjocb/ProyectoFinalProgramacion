@@ -60,7 +60,7 @@ public class MainAgencia extends Application {
         stage.setTitle("Panel Administrador");
         stage.setScene(scene);
         stage.show();
-        serializarAgencia();
+//        serializarAgencia();
     }
 
     public void abrirPanelGestionGuia() throws IOException {
