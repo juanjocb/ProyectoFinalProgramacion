@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="720" prefWidth="1280" style="-fx-background-color: #72C1F2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agenciaviajes.agenciaviajes.controlador.ReservaController">
+    <children>
+        <HBox prefHeight="698.0" prefWidth="1280.0">
+            <children>
+                <VBox alignment="CENTER" prefHeight="720.0" prefWidth="640.0" spacing="20.0">
+                    <children>
+                        <Label style="-fx-text-fill: white; -fx-font-size: 24;" text="Información de Reserva" />
+                        <TableView prefHeight="508.0" prefWidth="640.0">
+                            <columns>
+                                <TableColumn prefWidth="137.0" text="Fecha del Viaje" />
+                                <TableColumn minWidth="0.0" prefWidth="250.0" text="Cliente " />
+                                <TableColumn minWidth="0.0" prefWidth="120.0" text="# Personas" />
+                                <TableColumn minWidth="0.0" prefWidth="102.0" text="Estado" />
+                            </columns>
+                            <VBox.margin>
+                                <Insets left="30.0" />
+                            </VBox.margin>
+                        </TableView>
+                        <HBox alignment="CENTER" spacing="10">
+                            <children>
+                                <Button style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 18;" text="Actualizar" />
+                                <Button style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 18;" text="Borrar" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="720.0" prefWidth="640.0" spacing="20.0">
+                    <children>
+                        <Label style="-fx-text-fill: white; -fx-font-size: 24;" text="Detalles de la Reserva" />
+                        <DatePicker maxWidth="400.0" promptText="Fecha de Solicitud" />
+                        <DatePicker maxWidth="400.0" promptText="Fecha Planificada de Viaje" />
+                        <TextField maxWidth="400.0" minWidth="-Infinity" promptText="Cliente Involucrado" style="-fx-font-size: 18;" />
+                        <TextField maxWidth="400.0" minWidth="-Infinity" promptText="Cantidad de Personas" style="-fx-font-size: 18;" />
+                        <MenuButton maxWidth="400.0" mnemonicParsing="false" text="Paquete Turístico Seleccionado">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Action 1" />
+                                <MenuItem mnemonicParsing="false" text="Action 2" />
+                            </items>
+                        </MenuButton>
+                        <MenuButton maxWidth="400.0" mnemonicParsing="false" text="Guía Turístico">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Action 1" />
+                                <MenuItem mnemonicParsing="false" text="Action 2" />
+                            </items>
+                        </MenuButton>
+                        <MenuButton maxWidth="400.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="397.0" text="Estado de la reserva">
+                            <items>
+                                <MenuItem mnemonicParsing="false" text="Action 1" />
+                                <MenuItem mnemonicParsing="false" text="Action 2" />
+                            </items>
+                        </MenuButton>
+                        <HBox alignment="CENTER" spacing="10">
+                            <children>
+                                <Button style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 18;" text="Guardar" />
+                                <Button style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 18;" text="Cancelar" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <Button layoutX="15.0" layoutY="673.0" style="-fx-background-color: #0597F2; -fx-text-fill: white; -fx-font-size: 18;" text="Atras" />
+    </children>
+</AnchorPane>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="720" prefWidth="1280" style="-fx-background-color: #72C1F2;" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agenciaviajes.agenciaviajes.controlador.GuiaTController">
+    <children>
+        <HBox prefHeight="703.0" prefWidth="1280.0">
+            <children>
+                <VBox alignment="CENTER" prefHeight="720.0" prefWidth="640.0" spacing="20.0">
+                    <children>
+                        <Label style="-fx-text-fill: white; -fx-font-size: 26;" text="Información del Guía Turístico" />
+                        <HBox prefHeight="533.0" prefWidth="640.0">
+                            <children>
+                                <VBox prefHeight="200.0" prefWidth="100.0" />
+                                <VBox prefHeight="533.0" prefWidth="585.0" />
+                                <VBox prefHeight="200.0" prefWidth="100.0" />
+                        <VBox layoutX="61.0" layoutY="10.0" prefHeight="533.0" prefWidth="585.0" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" spacing="10">
+                            <children>
+                                <Button fx:id="buttonActualizarGuia" onAction="#guardarDatosActualizados" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 18;" text="Actualizar" />
+                                <Button fx:id="buttonEliminarGuia" onAction="#borrarGuia" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 18;" text="Borrar" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="720.0" prefWidth="640.0" spacing="20.0">
+                    <children>
+                        <Label style="-fx-text-fill: white; -fx-font-size: 24;" text="Guía Turístico" />
+                        <TextField fx:id="identificacionGuia" maxWidth="400.0" minWidth="-Infinity" promptText="Identificación" style="-fx-font-size: 18;" />
+                        <TextField fx:id="nombreGuia" maxWidth="400.0" minWidth="-Infinity" promptText="Nombre Completo" style="-fx-font-size: 18;" />
+                        <TextField fx:id="lenguajesGuia" maxWidth="400.0" minWidth="-Infinity" promptText="Lenguajes" style="-fx-font-size: 18;" />
+                        <TextField fx:id="expGuia" maxWidth="400.0" minWidth="-Infinity" promptText="Experiencia en Años" style="-fx-font-size: 18;" />
+                        <HBox alignment="CENTER" spacing="10">
+                            <children>
+                        <Button fx:id="buttonCancelar" onAction="#cancelarAccion" mnemonicParsing="false" text="Cancelar" />
+                                <Button fx:id="buttonGuardarGuia" onAction="#guardarGuia" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 18;" text="Guardar" />
+                                <Button fx:id="buttonBuscarGuia" onAction="#buscarGuia" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 18;" text="Buscar" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <Button fx:id="buttonAtras" onAction="#atras" layoutX="19.0" layoutY="671.0" style="-fx-background-color: #0597F2; -fx-text-fill: white; -fx-font-size: 18;" text="Atras" />
+    </children>
+</AnchorPane>

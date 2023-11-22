@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.*?>
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="1.7976931348623157E308" prefHeight="720" prefWidth="1280" style="-fx-background-color: #72C1F2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agenciaviajes.agenciaviajes.controlador.EmpresaController">
+    <children>
+        <VBox prefHeight="720.0" prefWidth="1280.0">
+            <children>
+                <HBox prefHeight="100.0" prefWidth="200.0" />
+                <HBox prefHeight="50.0" prefWidth="200.0" />
+                <HBox prefHeight="620.0" prefWidth="200.0">
+                    <children>
+                        <VBox prefHeight="200.0" prefWidth="50.0" />
+                        <VBox prefHeight="620.0" prefWidth="334.0">
+                            <children>
+                                <Label prefHeight="53.0" prefWidth="334.0" text="Misión" textAlignment="CENTER" underline="true" wrapText="true">
+                                    <font>
+                                        <Font size="36.0" />
+                                    </font>
+                                </Label>
+                                <Label prefHeight="459.0" prefWidth="334.0" text="Conectar a las personas con el mundo, eliminando las barreras geográficas y creando experiencias de viaje transformadoras. En Sin Fronteras, nos dedicamos a inspirar la exploración, promoviendo la libertad de viajar sin limitaciones y proporcionando momentos inolvidables que enriquecen la vida de nuestros clientes." textAlignment="JUSTIFY" wrapText="true">
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <HBox.margin>
+                                <Insets />
+                            </HBox.margin>
+                        </VBox>
+                        <VBox prefHeight="620.0" prefWidth="334.0">
+                            <children>
+                                <Label prefHeight="53.0" prefWidth="334.0" text="Visión" textAlignment="CENTER" underline="true" wrapText="true">
+                                    <font>
+                                        <Font size="36.0" />
+                                    </font>
+                                </Label>
+                                <Label prefHeight="459.0" prefWidth="334.0" text="Ser reconocidos como líderes en la industria de viajes, redefiniendo la forma en que las personas experimentan el mundo. En Sin Fronteras, aspiramos a ser pioneros en la creación de viajes sin restricciones, desafiando constantemente los límites para ofrecer experiencias que trascienden las expectativas y dejan una huella duradera." textAlignment="JUSTIFY" wrapText="true">
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets />
+                                    </VBox.margin>
+                                </Label>
+                            </children>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <HBox.margin>
+                                <Insets left="40.0" />
+                            </HBox.margin>
+                        </VBox>
+                        <VBox prefHeight="620.0" prefWidth="403.0">
+                            <children>
+                                <Label prefHeight="53.0" prefWidth="334.0" text="Valores Corporativos" textAlignment="CENTER" underline="true" wrapText="true">
+                                    <font>
+                                        <Font size="36.0" />
+                                    </font>
+                                </Label>
+                                <Label prefHeight="226.0" prefWidth="385.0" text="Libertad Exploradora: Creemos en la libertad de explorar sin restricciones. Fomentamos la aventura, la curiosidad y el descubrimiento como impulsores fundamentales de nuestros viajes." textAlignment="JUSTIFY" wrapText="true">
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                    <VBox.margin>
+                                        <Insets />
+                                    </VBox.margin>
+                                </Label>
+                                <Label prefHeight="246.0" prefWidth="385.0" text="Inclusividad Global: Valoramos y celebramos la diversidad de culturas y personas en todo el mundo. Buscamos construir puentes que unan a las comunidades y enriquezcan nuestras experiencias de viaje." textAlignment="JUSTIFY" wrapText="true">
+                                    <font>
+                                        <Font size="24.0" />
+                                    </font>
+                                </Label>
+                            </children>
+                            <opaqueInsets>
+                                <Insets />
+                            </opaqueInsets>
+                            <HBox.margin>
+                                <Insets left="40.0" />
+                            </HBox.margin>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox prefHeight="50.0" prefWidth="200.0" />
+            </children></VBox>
+    </children>
+</AnchorPane>

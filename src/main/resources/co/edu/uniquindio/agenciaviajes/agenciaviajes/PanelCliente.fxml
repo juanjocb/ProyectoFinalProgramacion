@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Pos?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane nodeOrientation="LEFT_TO_RIGHT" prefHeight="480" prefWidth="854" style="-fx-background-color: #72C1F2" xmlns="http://javafx.com/javafx/8" fx:controller="co.edu.uniquindio.agenciaviajes.agenciaviajes.controlador.ClienteController" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <HBox prefHeight="480" prefWidth="854">
+            <children>
+                <VBox prefHeight="480" prefWidth="640.0">
+                    <children>
+                        <HBox prefHeight="158.0" prefWidth="635.0" />
+                        <HBox prefHeight="395.0" prefWidth="635.0">
+<!--                            <children>-->
+<!--                                <VBox prefHeight="395.0" prefWidth="128.0" />-->
+<!--                                <VBox prefHeight="395.0" prefWidth="379.0">-->
+<!--                                    <children>-->
+<!--                                        <ImageView fitHeight="404.0" fitWidth="420.0" pickOnBounds="true" preserveRatio="true">-->
+<!--                                            <image>-->
+<!--                                                <Image url="" />-->
+<!--                                            </image>-->
+<!--                                        </ImageView>-->
+<!--                                    </children>-->
+<!--                                </VBox>-->
+<!--                                <VBox prefHeight="200.0" prefWidth="100.0" />-->
+<!--                            </children>-->
+                        </HBox>
+                        <HBox prefHeight="161.0" prefWidth="635.0" />
+                    </children></VBox>
+                <VBox alignment="CENTER" prefHeight="720.0" prefWidth="651.0" spacing="20.0">
+                    <children>
+                        <Label prefHeight="54.0" prefWidth="253.0" style="-fx-text-fill: white; -fx-font-size: 24;" text="Viajes sin fronteras" />
+                        <Button maxWidth="400.0" mnemonicParsing="false" text="Ver destinos " />
+                        <Button maxWidth="400.0" mnemonicParsing="false" text="Realizar una reserva" />
+                        <Button maxWidth="400.0" mnemonicParsing="false" text="Actualizar información" />
+                        <HBox alignment="CENTER" spacing="10" />
+                        <HBox alignment="CENTER" spacing="10">
+                            <children>
+                                <Button style="-fx-background-color: #0597F2; -fx-text-fill: white; -fx-font-size: 18;" text="Atras" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>
