@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 //Averiguar si es un usuario para registrar o lo gestiona el Admin
@@ -13,7 +14,7 @@ import java.util.ArrayList;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class GuiaTuristico {
+public class GuiaTuristico implements Serializable {
 
     private String identificacion;
     private String nombre;

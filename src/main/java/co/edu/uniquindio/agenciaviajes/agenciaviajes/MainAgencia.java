@@ -16,10 +16,6 @@ public class MainAgencia extends Application {
     private Stage stage;
     private Agencia agencia;
 
-    private void handleCloseRequest(WindowEvent event) {
-        serializarAgencia();
-    }
-
     @Override
     public void start(Stage stage) throws IOException {
         this.stage = stage;
@@ -131,8 +127,14 @@ public class MainAgencia extends Application {
 
     // Métodos adicionales para la serialización automática
     public void serializarAgencia() {
+        System.out.println("SERIALIZADO");
         agencia.serializar("C:\\Users\\Juan Jose\\OneDrive\\Escritorio\\Workspace java\\AgenciaViajes\\src\\main\\java\\co\\edu\\uniquindio\\agenciaviajes\\agenciaviajes\\archivo\\model.txt");
     }
+
+    private void handleCloseRequest(WindowEvent event) {
+        serializarAgencia();
+    }
+
 
 
 

@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Agencia implements Serializable {
 
-    private static transient Agencia instancia;
+    private static Agencia instancia;
     private ArrayList<Cliente> clientes;
     private ArrayList<Reserva> reservas;
     private Admin administrador;
