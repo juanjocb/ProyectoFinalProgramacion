@@ -7,4 +7,5 @@ module co.edu.uniquindio.agenciaviajes.agenciaviajes {
 
     opens co.edu.uniquindio.agenciaviajes.agenciaviajes.controlador to javafx.fxml;
     exports co.edu.uniquindio.agenciaviajes.agenciaviajes;
+    exports co.edu.uniquindio.agenciaviajes.agenciaviajes.controlador;
 }

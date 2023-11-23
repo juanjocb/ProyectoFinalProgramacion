@@ -9,7 +9,6 @@ import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 
 import java.io.IOException;
-import java.util.Objects;
 
 public class MainAgencia extends Application {
 
@@ -120,11 +119,11 @@ public class MainAgencia extends Application {
     }
 
     public void abrirPanelVerDestinos() throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(MainAgencia.class.getResource("PanelCliente.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(MainAgencia.class.getResource("VerDestino.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
-        ClienteController controller = fxmlLoader.getController();
+        VerDestinoController controller = fxmlLoader.getController();
         controller.setMain(this);
-        stage.setTitle("Panel Registro Cliente");
+        stage.setTitle("Panel VerDestinos");
         stage.setScene(scene);
         stage.show();
         serializarAgencia();

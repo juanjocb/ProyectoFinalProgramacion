@@ -35,7 +35,7 @@
                 </VBox>
                 <VBox alignment="CENTER" prefHeight="720.0" prefWidth="640.0" spacing="20.0">
                     <children>
-                        <Label style="-fx-text-fill: white; -fx-font-size: 24;" text="Crear/Editar Destino" />
+                        <Label style="-fx-text-fill: white; -fx-font-size: 24;" text="Crear/Editar Paquete Turistico" />
 <!--                        <MenuButton fx:id="menuButtonDestinos" onAction="#actualizarDestinos" maxWidth="400.0" mnemonicParsing="false" text="Destino">-->
                         <MenuButton fx:id="menuButtonDestinos" onMouseClicked="#actualizarDestinos" maxWidth="400.0" mnemonicParsing="false" text="Destino">
                             <items>

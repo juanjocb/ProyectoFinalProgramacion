@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280" style="-fx-background-color: #72C1F2;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.agenciaviajes.agenciaviajes.controlador.VerDestinoController">
+    <children>
+        <HBox prefHeight="709.0" prefWidth="1280.0">
+            <children>
+                <VBox alignment="CENTER" prefHeight="720.0" prefWidth="640.0" spacing="20.0">
+               <children>
+                  <HBox prefHeight="546.0" prefWidth="640.0">
+                     <children>
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                        <VBox prefHeight="546.0" prefWidth="436.0">
+                           <children>
+                              <HBox prefHeight="71.0" prefWidth="454.0" />
+                              <ImageView fitHeight="366.0" fitWidth="454.0">
+                                 <image>
+                                    <Image url="@../../../../../../java/co/edu/uniquindio/agenciaviajes/agenciaviajes/images/logotipo.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="100.0" />
+                     </children>
+                  </HBox>
+               </children>
+                </VBox>
+                <VBox alignment="CENTER" prefHeight="709.0" prefWidth="878.0" spacing="20.0">
+                    <children>
+                        <Label style="-fx-text-fill: white; -fx-font-size: 24;" text="Crear/Editar Destino" />
+                  <MenuButton fx:id="buttonMenuDestinos" onMouseClicked="#verDestinos" mnemonicParsing="false" prefHeight="39.0" prefWidth="399.0" style="-fx-alignment: 18;" text="Destinos">
+                    <items>
+                    </items>
+                  </MenuButton>
+                        <TextField fx:id="nombreDestino" maxWidth="400.0" minWidth="-Infinity" promptText="Nombre" style="-fx-font-size: 18;" />
+                        <TextField fx:id="ciudadDestino" maxWidth="400.0" minWidth="-Infinity" promptText="Ciudad" style="-fx-font-size: 18;" />
+                        <TextField fx:id="climaDestino" maxWidth="400.0" minWidth="-Infinity" promptText="Clima" style="-fx-font-size: 18;" />
+                        <TextArea fx:id="descripcionDestino" maxWidth="400.0" minHeight="100" minWidth="-Infinity" prefHeight="500.0" prefWidth="400.0" promptText="Descripción detallada del destino" style="-fx-font-size: 18; -fx-pref-height: 100;">
+                            <opaqueInsets>
+                                <Insets left="30.0" />
+                            </opaqueInsets>
+                            <VBox.margin>
+                                <Insets left="30.0" right="30.0" />
+                            </VBox.margin>
+                        </TextArea>
+                        <HBox alignment="CENTER" spacing="10">
+                            <children>
+                                <Button fx:id="buttonBuscas" onAction="#buscarDestino" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 18;" text="Buscar" />
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <Button fx:id="atras" onAction="#atras" layoutX="13.0" layoutY="675.0" style="-fx-background-color: #0597F2; -fx-text-fill: white; -fx-font-size: 18;" text="Atras" />
+    </children>
+</AnchorPane>

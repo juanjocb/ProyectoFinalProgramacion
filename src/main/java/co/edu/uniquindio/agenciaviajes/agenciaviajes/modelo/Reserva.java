@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -16,8 +17,8 @@ import java.util.Date;
 public class Reserva implements Serializable {
 
     private Cliente cliente;
-    private Date fechaSolicitud;
-    private Date fechaPlaneacion;
+    private LocalDate fechaSolicitud;
+    private LocalDate fechaPlaneacion;
     private int cantPersonas;
     private PaqueteTuristico paqueteTuristico;
     private ArrayList<GuiaTuristico> guiasTuristicos;

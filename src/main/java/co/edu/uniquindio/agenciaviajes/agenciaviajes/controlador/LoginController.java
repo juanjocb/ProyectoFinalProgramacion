@@ -36,6 +36,10 @@ public class LoginController {
         String contrasenia = passwordField.getText();
 
         if(usuario != null && contrasenia != null){
+            if (usuario.equalsIgnoreCase("administrador") && contrasenia.equalsIgnoreCase("soyeladmin")) {
+                main.abrirPanelAdmin();
+            }else{
+
 
 
         try {
@@ -49,9 +53,7 @@ public class LoginController {
             e.printStackTrace();
         }
 
-        if (usuario.equalsIgnoreCase("administrador") && contrasenia.equalsIgnoreCase("soyeladmin")) {
-            main.abrirPanelAdmin();
-        }
+            }
         }
     }
 
