@@ -48,7 +48,7 @@
                         <HBox alignment="CENTER" spacing="10" />
                         <HBox alignment="CENTER" spacing="10">
                             <children>
-                                <Button style="-fx-background-color: #0597F2; -fx-text-fill: white; -fx-font-size: 18;" text="Atras" />
+                                <Button onAction="#salir" style="-fx-background-color: #0597F2; -fx-text-fill: white; -fx-font-size: 18;" text="Salir" />
                             </children>
                         </HBox>
                     </children>

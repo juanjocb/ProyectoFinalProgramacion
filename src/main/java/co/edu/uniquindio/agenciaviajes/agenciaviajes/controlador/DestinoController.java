@@ -32,7 +32,7 @@ public class DestinoController {
             String clima = climaSeleccionado.getText();
 
             if (nombre.isEmpty() || ciudad.isEmpty() || descripcion.isEmpty() || clima.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Ups, no puedes agregar un Destino sin su informacion");
+                mostrarAlerta("ERROR", "Ups, no puedes agregar un Destino sin su informacion");
                 return;
             }
 
@@ -45,7 +45,8 @@ public class DestinoController {
             txtDescripcionDestino.setText("");
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Tuvimos un error al intentar guardar el Destino, intentalo nuevamente");
+            mostrarAlerta("ERROR", "Tuvimos un error al intentar guardar el Destino, intentalo nuevamente");
+
         }
     }
 
@@ -62,7 +63,8 @@ public class DestinoController {
 
 
             if (nombre.isEmpty() || ciudad.isEmpty() || descripcion.isEmpty() || clima.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Ups, no puedes agregar un guia sin su informacion");
+                mostrarAlerta("ERROR", "Ups, no puedes agregar un destino sin su informacion");
+
                 return;
             }
 
@@ -81,12 +83,12 @@ public class DestinoController {
                 txtDescripcionDestino.setText("");
                 climaSeleccionado.setText("");
             } else {
-                JOptionPane.showMessageDialog(null, "Tuvimos un error al intentar buscar el Destino, intentalo nuevamente");
+                mostrarAlerta("ERROR", "Tuvimos un error al intentar buscar el Destino, intentalo nuevamente");
 
             }
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Tuvimos un error al intentar actualizar la informacion del Destino, intentalo nuevamente");
+            mostrarAlerta("ERROR", "Tuvimos un error al intentar actualizar la informacion del Destino, intentalo nuevamente");
         }
     }
 
@@ -104,10 +106,10 @@ public class DestinoController {
                 txtDescripcionDestino.setText("");
                 climaSeleccionado.setText("");
             } else {
-                throw new GuiaNotFoundException("No se encontró un Destino con el nombre proporcionada.");
+                mostrarAlerta("ERROR", "No se encontró un Destino con el nombre proporcionada");
             }
-        } catch (GuiaNotFoundException e) {
-            JOptionPane.showMessageDialog(null, "Disculpa, por el momento no existe ningun Destino");
+        } catch (Exception e) {
+            mostrarAlerta("ERROR", "Disculpa, por el momento no existe ningun Destino");
         }
     }
 
@@ -130,13 +132,16 @@ public class DestinoController {
                     txtCiudadDestino.clear();
                     climaSeleccionado.setText("");
 
-                    mostrarAlertaError("Nombre incorrecta Ups, parece que has ingresado un nombre incorrecta.");
+
+                    mostrarAlerta("ERROR", "Nombre incorrecta Ups, parece que has ingresado un nombre incorrecta");
                 }
             } else {
-                mostrarAlertaError("Campo vacío Por favor, ingresa una nombre antes de buscar.");
+
+                mostrarAlerta("ERROR", "Campo vacío Por favor, ingresa una nombre antes de buscar.");
             }
         } catch (Exception e) {
-            mostrarAlertaError("Error al buscar el Destino Ups, parece que ocurrió un error al buscar el Destino.");
+
+            mostrarAlerta("ERROR", "Error al buscar el Destino Ups, parece que ocurrió un error al buscar el Destino");
         }
     }
 
@@ -163,9 +168,9 @@ public class DestinoController {
         climaSeleccionado.setText(""); // Limpiar el clima seleccionado
     }
 
-    private void mostrarAlertaError(String mensaje) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle("Error");
+    private void mostrarAlerta(String titulo, String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle(titulo);
         alert.setHeaderText(null);
         alert.setContentText(mensaje);
         alert.showAndWait();

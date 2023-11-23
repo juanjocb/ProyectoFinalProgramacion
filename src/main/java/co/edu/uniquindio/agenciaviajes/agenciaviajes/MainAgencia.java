@@ -38,11 +38,12 @@ public class MainAgencia extends Application {
 
 
 
-    private void iniciarLogin() throws IOException {
+    public void iniciarLogin() throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(MainAgencia.class.getResource("LoginFX.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         LoginController controller = fxmlLoader.getController();
         controller.setMain(this);  // Asegúrate de que este método se llame para establecer la referencia 'main'
+        controller.inicializarAgencia(agencia);  // Asegúrate de que este método se llame para inicializar 'agencia'
         stage.setTitle("Bienvenido a SinFronteras");
         stage.setScene(scene);
         stage.show();
@@ -60,7 +61,7 @@ public class MainAgencia extends Application {
         stage.setTitle("Panel Administrador");
         stage.setScene(scene);
         stage.show();
-//        serializarAgencia();
+        serializarAgencia();
     }
 
     public void abrirPanelGestionGuia() throws IOException {
@@ -96,8 +97,44 @@ public class MainAgencia extends Application {
         serializarAgencia();
     }
 
+    public void abrirPanelRegistroCliente() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainAgencia.class.getResource("RegistroClienteFX.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        RegistroClienteController controller = fxmlLoader.getController();
+        controller.setMain(this);
+        stage.setTitle("Panel Registro Cliente");
+        stage.setScene(scene);
+        stage.show();
+        serializarAgencia();
+    }
+
+    public void abrirPanelCliente() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainAgencia.class.getResource("PanelCliente.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        ClienteController controller = fxmlLoader.getController();
+        controller.setMain(this);
+        stage.setTitle("Panel Registro Cliente");
+        stage.setScene(scene);
+        stage.show();
+        serializarAgencia();
+    }
+
+    public void abrirPanelVerDestinos() throws IOException {
+        FXMLLoader fxmlLoader = new FXMLLoader(MainAgencia.class.getResource("PanelCliente.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        ClienteController controller = fxmlLoader.getController();
+        controller.setMain(this);
+        stage.setTitle("Panel Registro Cliente");
+        stage.setScene(scene);
+        stage.show();
+        serializarAgencia();
+    }
+
     // Métodos adicionales para la serialización automática
     public void serializarAgencia() {
         agencia.serializar("C:\\Users\\Juan Jose\\OneDrive\\Escritorio\\Workspace java\\AgenciaViajes\\src\\main\\java\\co\\edu\\uniquindio\\agenciaviajes\\agenciaviajes\\archivo\\model.txt");
     }
+
+
+
 }

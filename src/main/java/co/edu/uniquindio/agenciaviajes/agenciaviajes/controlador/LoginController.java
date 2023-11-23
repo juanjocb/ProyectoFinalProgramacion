@@ -1,7 +1,10 @@
 package co.edu.uniquindio.agenciaviajes.agenciaviajes.controlador;
 
+import co.edu.uniquindio.agenciaviajes.agenciaviajes.modelo.Agencia;
+import co.edu.uniquindio.agenciaviajes.agenciaviajes.modelo.Cliente;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
@@ -14,31 +17,57 @@ public class LoginController {
     public PasswordField passwordField;
     public TextField usernameField;
     public Button buttonIniciarSesion;
+    public Button buttonCrearCuenta;
     ModelFactoryController domain = ModelFactoryController.getInstance();
+    Agencia agencia;
     MainAgencia main;
-
 
     public void setMain(MainAgencia mainAgencia) {
         this.main = mainAgencia;
     }
 
-    public void iniciarSesionCliente(ActionEvent actionEvent) {
-        try {
-            String usuario = usernameField.getText();
-            String contrasenia = passwordField.getText();
+    public void inicializarAgencia(Agencia agencia) {
+        this.agencia = agencia;
+    }
 
-            if (usuario.equalsIgnoreCase("administrador") && contrasenia.equalsIgnoreCase("soyeladmin")) {
-                main.abrirPanelAdmin();
-            } else {
-                System.out.println("Datos incorrectos");
+    public void iniciarSesion(ActionEvent actionEvent) throws IOException {
+        System.out.println("Entro al metodo");
+        String usuario = usernameField.getText();
+        String contrasenia = passwordField.getText();
+
+        if(usuario != null && contrasenia != null){
+
+
+        try {
+            System.out.println("Entro al try");
+            Cliente clienteAutenticado = agencia.iniciarSesionCliente(usuario, contrasenia);
+            if(clienteAutenticado != null) {
+                main.abrirPanelCliente();
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
+            System.out.println("Error al iniciar sesión como cliente: " + e.getMessage());
             e.printStackTrace();
+        }
+
+        if (usuario.equalsIgnoreCase("administrador") && contrasenia.equalsIgnoreCase("soyeladmin")) {
+            main.abrirPanelAdmin();
+        }
         }
     }
 
-    public void crearCuentaCliente(ActionEvent actionEvent) {
+    private void mostrarAlerta(String titulo, String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
     }
+
+    public void crearCuentaCliente(ActionEvent actionEvent) throws IOException {
+        main.abrirPanelRegistroCliente();
+    }
+
+
 
 
 }

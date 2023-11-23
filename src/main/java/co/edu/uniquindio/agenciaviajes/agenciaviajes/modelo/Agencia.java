@@ -1,6 +1,8 @@
 package co.edu.uniquindio.agenciaviajes.agenciaviajes.modelo;
 import java.io.*;
 import java.util.ArrayList;
+
+import javafx.scene.control.Alert;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,7 +17,7 @@ public class Agencia implements Serializable {
     private ArrayList<Reserva> reservas;
     private Admin administrador;
 
-    private Agencia(ArrayList<Cliente> clientes, ArrayList<Destino> destinos, ArrayList<GuiaTuristico> guiaTuristicos, ArrayList<PaqueteTuristico> paqueteTuristicos, ArrayList<Reserva> reservas, Admin administrador){
+    private Agencia(ArrayList<Cliente> clientes, ArrayList<Destino> destinos, ArrayList<GuiaTuristico> guiaTuristicos, ArrayList<PaqueteTuristico> paqueteTuristicos, ArrayList<Reserva> reservas, Admin administrador) {
         this.clientes = clientes;
         this.reservas = reservas;
         this.administrador = administrador != null ? administrador : Admin.obtenerInstancia();
@@ -28,21 +30,21 @@ public class Agencia implements Serializable {
         return instancia;
     }
 
-    public void registrarCliente(Cliente cliente) throws Exception {
-
-        if(clientes.contains(cliente)){
-            throw new Exception("Ups, disculpa. Ya alguien se encuentra registrado con estos datos");
-        }else{
-            clientes.add(cliente);
-        }
-    }
-
     public void serializar(String nombreArchivo) {
         try (ObjectOutputStream salida = new ObjectOutputStream(new FileOutputStream(nombreArchivo))) {
             salida.writeObject(this);
         } catch (IOException e) {
             e.printStackTrace();
             System.out.println("No serializo");
+        }
+    }
+
+    public void registrarCliente(Cliente cliente) throws Exception {
+        if (clientes.contains(cliente)) {
+            throw new Exception("Ups, disculpa. Ya alguien se encuentra registrado con estos datos");
+        } else {
+            clientes.add(cliente);
+            System.out.println("Se ha guardado al cliente: " + cliente.getContrasenia() + " " + cliente.getIdentificacion());
         }
     }
 
@@ -63,5 +65,24 @@ public class Agencia implements Serializable {
     }
 
 
+    public Cliente iniciarSesionCliente(String identificacion, String contrasenia) {
+        System.out.println("Voy a comparar: " + identificacion + " " + contrasenia);
+        for (Cliente cliente : clientes) {
+            if (cliente.getIdentificacion().equalsIgnoreCase(identificacion) && cliente.getContrasenia().equalsIgnoreCase(contrasenia)) {
+                System.out.println("Si existe el cliente igual");
+                System.out.println(identificacion + " " + contrasenia);
+                return cliente;
+            }
+        }
+        mostrarAlertaError("No se encontraron los datos");
+        return null;
+    }
 
+    private void mostrarAlertaError (String mensaje){
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle("Error");
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
 }

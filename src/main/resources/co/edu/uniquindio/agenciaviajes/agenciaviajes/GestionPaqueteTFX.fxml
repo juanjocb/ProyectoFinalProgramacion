@@ -35,7 +35,7 @@
                 </VBox>
                 <VBox alignment="CENTER" prefHeight="720.0" prefWidth="640.0" spacing="20.0">
                     <children>
-                        <Label style="-fx-text-fill: white; -fx-font-size: 24;" text="Crear/Editar Destino" />
+                        <Label style="-fx-text-fill: white; -fx-font-size: 24;" text="Crear/Editar Paquete Turistico" />
 <!--                        <MenuButton fx:id="menuButtonDestinos" onAction="#actualizarDestinos" maxWidth="400.0" mnemonicParsing="false" text="Destino">-->
                         <MenuButton fx:id="menuButtonDestinos" onMouseClicked="#actualizarDestinos" maxWidth="400.0" mnemonicParsing="false" text="Destino">
                             <items>
@@ -57,6 +57,7 @@
                             <children>
                                 <Button fx:id="buttonGuardarPaquete" onAction="#guardarPaquete" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 18;" text="Guardar" />
                                 <Button fx:id="buttonCancelar" onAction="#cancelarPeticion" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 18;" text="Cancelar" />
+                                <Button fx:id="buttonBuscar" onAction="#buscarPaquete" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 18;" text="Buscar" />
                             </children>
                         </HBox>
                     </children>

@@ -26,6 +26,7 @@ public class PaqueteController {
     public Button buttonCancelar;
     public MenuButton menuButtonDestinos;
     public TextField cupoMaximo;
+    public Button buttonBuscar;
 
     private MainAgencia main;
     Admin admin;
@@ -76,11 +77,6 @@ public class PaqueteController {
                     return;
                 }
 
-                if (nombreDestino.isEmpty()) {
-                    mostrarAlertaError("Selecciona un destino para el paquete.");
-                    return;
-                }
-
                 Destino destino = Admin.obtenerInstancia().buscarDestino(nombreDestino);
 
                 if (destino == null) {
@@ -114,6 +110,7 @@ public class PaqueteController {
             precioPaquete.clear();
             fechaInicio.setValue(null);
             fechaFinal.setValue(null);
+            cupoMaximo.clear();
         }
 
         private void mostrarAlertaError (String mensaje){
@@ -132,13 +129,46 @@ public class PaqueteController {
             alert.showAndWait();
         }
 
-        public void borrarPaquete (ActionEvent actionEvent){
-        }
+    public void borrarPaquete(ActionEvent actionEvent) {
+        try {
 
-        public void actualizarPaquete (ActionEvent actionEvent){
+            String nombre = nombrePaquete.getText();
+
+            // Lógica para borrar el paquete con el nombre proporcionado
+            boolean paqueteBorrado = Admin.obtenerInstancia().borrarPaquete(nombre);
+            limpiarCamposPaquete();
+            if (paqueteBorrado) {
+                mostrarAlertaInfo("Paquete turístico borrado correctamente.");
+            } else {
+                mostrarAlertaError("No se encontró el paquete seleccionado.");
+            }
+        } catch (Exception e) {
+            mostrarAlertaError("Error al intentar borrar el paquete turístico.");
         }
+    }
+
+    public void actualizarPaquete(ActionEvent actionEvent) {
+        try {
+
+            String nombre = nombrePaquete.getText();
+
+            // Lógica para obtener y actualizar el paquete con el nombre proporcionado
+            PaqueteTuristico paqueteExistente = Admin.obtenerInstancia().buscarPaquete(nombre);
+
+            if (paqueteExistente != null) {
+                Admin.obtenerInstancia().actualizarPaquete(paqueteExistente);
+                limpiarCamposPaquete();
+                mostrarAlertaInfo("Paquete turístico actualizado correctamente.");
+            } else {
+                mostrarAlertaError("No se encontró el paquete seleccionado.");
+            }
+        } catch (Exception e) {
+            mostrarAlertaError("Error al intentar actualizar el paquete turístico.");
+        }
+    }
 
         public void cancelarPeticion (ActionEvent actionEvent){
+        limpiarCamposPaquete();
         }
 
 
@@ -150,11 +180,10 @@ public class PaqueteController {
     public void actualizarDestinos(MouseEvent actionEvent) {
 
         try {
-
+            menuButtonDestinos.getItems().clear();
             ArrayList<Destino> destinos = Admin.obtenerInstancia().getDestinos();
 
             for (Destino destino : destinos) {
-                System.out.println(destino.getNombre());
                 RadioMenuItem menuItem = new RadioMenuItem(destino.getNombre());
                 menuItem.setToggleGroup(destinoToggleGroup);
 
@@ -167,6 +196,46 @@ public class PaqueteController {
             }
         } catch (Exception e) {
             mostrarAlertaError("Error al intentar actualizar los destinos.");
+        }
+    }
+
+    public void buscarPaquete(ActionEvent actionEvent) {
+        try {
+            // Obtener el nombre del paquete a buscar
+            String nombrePaqueteBuscar = nombrePaquete.getText();
+
+            // Validar que el nombre del paquete no esté vacío
+            if (nombrePaqueteBuscar.isEmpty()) {
+                mostrarAlertaError("Ingresa el nombre del paquete a buscar.");
+                return;
+            }
+
+            // Llamar al método buscarPaquete en la instancia de Admin
+            PaqueteTuristico paqueteEncontrado = Admin.obtenerInstancia().buscarPaquete(nombrePaqueteBuscar);
+
+            // Verificar si se encontró el paquete
+            if (paqueteEncontrado != null) {
+                String nombre = paqueteEncontrado.getNombre();
+                int duracionStr = paqueteEncontrado.getDuracion();
+                String servAdicionales = paqueteEncontrado.getServiciosAdi();
+                double precioStr = paqueteEncontrado.getPrecio();
+                LocalDate fechaInicioValue = paqueteEncontrado.getFechaInicio();
+                int cupoStr = paqueteEncontrado.getCupoMaximo();
+                LocalDate fechaFinalValue = paqueteEncontrado.getFechaFinal();
+
+                nombrePaquete.setText(nombre);
+                duracionPaquete.setText(String.valueOf(duracionStr));
+                servAdicionalesPaquete.setText(servAdicionales);
+                precioPaquete.setText(String.valueOf(precioStr));
+                fechaInicio.setValue(fechaInicioValue);
+                fechaFinal.setValue(fechaFinalValue);
+                cupoMaximo.setText(String.valueOf(cupoStr));
+            } else {
+                mostrarAlertaInfo("No se encontró el paquete con el nombre: " + nombrePaqueteBuscar);
+            }
+
+        } catch (Exception e) {
+            mostrarAlertaError("Error al intentar buscar el paquete turístico.");
         }
     }
 }

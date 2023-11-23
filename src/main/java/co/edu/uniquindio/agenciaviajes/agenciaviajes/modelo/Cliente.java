@@ -18,5 +18,6 @@ public class Cliente implements Serializable {
     private String correo;
     private String numTelefono;
     private String direccion;
+    private String contrasenia;
 
 }

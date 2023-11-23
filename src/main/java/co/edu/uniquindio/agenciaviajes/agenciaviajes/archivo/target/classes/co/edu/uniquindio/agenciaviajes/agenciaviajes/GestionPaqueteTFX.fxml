@@ -39,9 +39,6 @@
 <!--                        <MenuButton fx:id="menuButtonDestinos" onAction="#actualizarDestinos" maxWidth="400.0" mnemonicParsing="false" text="Destino">-->
                         <MenuButton fx:id="menuButtonDestinos" onMouseClicked="#actualizarDestinos" maxWidth="400.0" mnemonicParsing="false" text="Destino">
                             <items>
-                                <!-- Usa RadioMenuItem en lugar de MenuItem y asigna el ToggleGroup -->
-                                <RadioMenuItem text="Destino 1" toggleGroup="$destinoToggleGroup"/>
-                                <RadioMenuItem text="Destino 2" toggleGroup="$destinoToggleGroup"/>
                                 <!-- Agrega más destinos según sea necesario -->
                             </items>
                         </MenuButton>
@@ -60,6 +57,7 @@
                             <children>
                                 <Button fx:id="buttonGuardarPaquete" onAction="#guardarPaquete" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 18;" text="Guardar" />
                                 <Button fx:id="buttonCancelar" onAction="#cancelarPeticion" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 18;" text="Cancelar" />
+                                <Button fx:id="buttonBuscar" onAction="#buscarPaquete" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 18;" text="Buscar" />
                             </children>
                         </HBox>
                     </children>

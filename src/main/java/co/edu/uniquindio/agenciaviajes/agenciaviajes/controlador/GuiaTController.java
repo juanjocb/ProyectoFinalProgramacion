@@ -50,12 +50,14 @@ public class GuiaTController {
             try {
                 exp = Integer.parseInt(expGuia.getText());
             } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Ups, error. El dato que ingresaste no es un numero");
+                mostrarAlerta("ERROR", "Ups, error. El dato que ingresaste no es un numero");
+
                 return;
             }
 
             if (identificacion.isEmpty() || nombre.isEmpty() || lenguajes.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Ups, no puedes agregar un guia sin su informacion");
+                mostrarAlerta("ERROR", "Ups, no puedes agregar un guia sin su informacion");
+
                 return;
             }
 
@@ -69,7 +71,8 @@ public class GuiaTController {
             expGuia.setText("");
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Tuvimos un error al intentar guardar el guia, intentalo nuevamente");
+            mostrarAlerta("ERROR", "Tuvimos un error al intentar guardar el guia, intentalo nuevamente");
+
         }
     }
 
@@ -84,12 +87,13 @@ public class GuiaTController {
             try {
                 exp = Integer.parseInt(expGuia.getText());
             } catch (NumberFormatException e) {
-                JOptionPane.showMessageDialog(null, "Ups, error. El dato que ingresaste no es un numero");
+                mostrarAlerta("ERROR", "Ups, error. El dato que ingresaste no es un numero");
+
                 return;
             }
 
             if (identificacion.isEmpty() || nombre.isEmpty() || lenguajes.isEmpty()) {
-                JOptionPane.showMessageDialog(null, "Ups, no puedes agregar un guia sin su informacion");
+                mostrarAlerta("ERROR", "Ups, no puedes agregar un guia sin su informacion");
                 return;
             }
 
@@ -107,17 +111,18 @@ public class GuiaTController {
                 lenguajesGuia.setText("");
                 expGuia.setText("");
             } else {
-                JOptionPane.showMessageDialog(null, "Tuvimos un error al intentar buscar el guia, intentalo nuevamente");
+                mostrarAlerta("ERROR", "Tuvimos un error al intentar buscar el guia");
 
             }
 
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Tuvimos un error al intentar actualizar la informacion del guia, intentalo nuevamente");
+            mostrarAlerta("ERROR", "Tuvimos un error al intentar actualizar la informacion");
+
         }
     }
 
     @FXML
-    public void borrarGuia() throws GuiaNotFoundException {
+    public void borrarGuia() {
         String identificacion = identificacionGuia.getText();
 
         try {
@@ -131,10 +136,10 @@ public class GuiaTController {
                 lenguajesGuia.setText("");
                 expGuia.setText("");
             } else {
-                throw new GuiaNotFoundException("No se encontró un guía con la identificación proporcionada.");
+                mostrarAlerta("ERROR", "Disculpa, no se encontro ningun guia con esta identificacion");
             }
-        } catch (GuiaNotFoundException e) {
-            JOptionPane.showMessageDialog(null, "Disculpa, por el momento no existe ningun guia");
+        } catch (Exception e) {
+            mostrarAlerta("ERROR", "Disculpa, por el momento no existe ningun guia");
         }
     }
     @FXML

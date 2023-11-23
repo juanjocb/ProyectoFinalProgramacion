@@ -27,4 +27,8 @@ public class AdminController {
     public void gestionDestino(ActionEvent actionEvent) throws IOException {
         main.abrirPanelGestionDestino();
     }
+
+    public void salir(ActionEvent actionEvent) throws IOException {
+        main.iniciarLogin();
+    }
 }
