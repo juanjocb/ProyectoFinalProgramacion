@@ -1,6 +1,7 @@
 package co.edu.uniquindio.agenciaviajes.agenciaviajes.controlador;
 
 import co.edu.uniquindio.agenciaviajes.agenciaviajes.MainAgencia;
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 
@@ -16,8 +17,28 @@ public class AdminController {
         this.main = mainAgencia;
     }
 
-    public void gestionGuia(ActionEvent actionEvent) throws IOException {
-        main.abrirPanelGestionGuia();
+    public void gestionGuia(ActionEvent actionEvent) {
+        // Crear un hilo para el retraso de 5 segundos
+        Thread thread = new Thread(() -> {
+            try {
+                // Retraso de 5 segundos
+                Thread.sleep(5000);
+
+                // Después del retraso, ejecutar la apertura del panel de gestión de guía en el hilo de JavaFX
+                Platform.runLater(() -> {
+                    try {
+                        main.abrirPanelGestionGuia();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
+                });
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        });
+
+        // Iniciar el hilo
+        thread.start();
     }
 
     public void gestionPaquete(ActionEvent actionEvent) throws IOException {
