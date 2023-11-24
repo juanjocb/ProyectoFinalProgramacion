@@ -130,16 +130,17 @@
             }
         }
 
-        public GuiaTuristico buscarGuia(String identificacion) {
-            try {
-                for (GuiaTuristico guiaTuristico : guiasTuristicos) {
-                    if (guiaTuristico.getIdentificacion().equals(identificacion)) {
-                        return guiaTuristico;
-                    }
+        public GuiaTuristico buscarGuia(String identificacion, int indice) {
+            if (indice < guiasTuristicos.size()) {
+                GuiaTuristico guiaTuristico = guiasTuristicos.get(indice);
+                if (guiaTuristico.getIdentificacion().equals(identificacion)) {
+                    return guiaTuristico;
+                } else {
+                    // Llamada recursiva para buscar en el siguiente elemento de la lista
+                    return buscarGuia(identificacion, indice + 1);
                 }
-                return null;
-            } catch (Exception e) {
-                manejarError("Error al buscar guía turística: " + e.getMessage());
+            } else {
+                // Se llegó al final de la lista sin encontrar la guía
                 return null;
             }
         }

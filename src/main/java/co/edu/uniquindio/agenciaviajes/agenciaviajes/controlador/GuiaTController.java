@@ -97,7 +97,7 @@ public class GuiaTController {
                 return;
             }
 
-            GuiaTuristico guia = Admin.obtenerInstancia().buscarGuia(identificacion);
+            GuiaTuristico guia = Admin.obtenerInstancia().buscarGuia(identificacion, 0);
 
             if (guia != null) {
                 guia.setNombre(nombre);
@@ -126,7 +126,7 @@ public class GuiaTController {
         String identificacion = identificacionGuia.getText();
 
         try {
-            GuiaTuristico guia = Admin.obtenerInstancia().buscarGuia(identificacion);
+            GuiaTuristico guia = Admin.obtenerInstancia().buscarGuia(identificacion, 0);
 
             if (guia != null) {
                 Admin.obtenerInstancia().eliminarGuia(guia);
@@ -148,7 +148,7 @@ public class GuiaTController {
             String identificacion = identificacionGuia.getText();
 
             if (!identificacion.isEmpty()) {
-                GuiaTuristico guia = Admin.obtenerInstancia().buscarGuia(identificacion);
+                GuiaTuristico guia = Admin.obtenerInstancia().buscarGuia(identificacion, 0);
 
                 if (guia != null) {
                     nombreGuia.setText(guia.getNombre());

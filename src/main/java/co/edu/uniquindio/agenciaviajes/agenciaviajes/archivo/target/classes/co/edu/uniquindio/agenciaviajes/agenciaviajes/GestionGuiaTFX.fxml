@@ -16,6 +16,7 @@
                                 <VBox prefHeight="533.0" prefWidth="585.0" />
                                 <VBox prefHeight="200.0" prefWidth="100.0" />
                         <VBox layoutX="61.0" layoutY="10.0" prefHeight="533.0" prefWidth="585.0" />
+
                             </children>
                         </HBox>
                         <HBox alignment="CENTER" spacing="10">
@@ -35,15 +36,15 @@
                         <TextField fx:id="expGuia" maxWidth="400.0" minWidth="-Infinity" promptText="Experiencia en Años" style="-fx-font-size: 18;" />
                         <HBox alignment="CENTER" spacing="10">
                             <children>
-                        <Button fx:id="buttonCancelar" onAction="#cancelarAccion" mnemonicParsing="false" text="Cancelar" />
+                        <Button fx:id="buttonCancelar" mnemonicParsing="false" onAction="#cancelarAccion" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 18;" text="Cancelar" />
                                 <Button fx:id="buttonGuardarGuia" onAction="#guardarGuia" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 18;" text="Guardar" />
-                                <Button fx:id="buttonBuscarGuia" onAction="#buscarGuia" style="-fx-background-color: #e74c3c; -fx-text-fill: white; -fx-font-size: 18;" text="Buscar" />
+                                <Button fx:id="buttonBuscarGuia" onAction="#buscarGuia" style="-fx-background-color: #2ecc71; -fx-text-fill: white; -fx-font-size: 18;" text="Buscar" />
                             </children>
                         </HBox>
                     </children>
                 </VBox>
             </children>
         </HBox>
-        <Button fx:id="buttonAtras" onAction="#atras" layoutX="19.0" layoutY="671.0" style="-fx-background-color: #0597F2; -fx-text-fill: white; -fx-font-size: 18;" text="Atras" />
+        <Button fx:id="buttonAtras" layoutX="19.0" layoutY="671.0" onAction="#atras" style="-fx-background-color: #0597F2; -fx-text-fill: white; -fx-font-size: 18;" text="Atras" />
     </children>
 </AnchorPane>

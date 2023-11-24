@@ -11,12 +11,12 @@
             <children>
                 <VBox alignment="CENTER" prefHeight="720.0" prefWidth="640.0" spacing="20.0">
                     <children>
-                        <Label style="-fx-text-fill: white; -fx-font-size: 25;" text="Imágenes Representativas" />
+                        <ImageView fitHeight="366.0" fitWidth="454.0">
+                            <image>
+                                <Image url="@../../../../../../java/co/edu/uniquindio/agenciaviajes/agenciaviajes/images/logotipo.png" />
+                            </image>
+                        </ImageView>
                         <GridPane hgap="10" prefHeight="587.0" prefWidth="533.0" vgap="10">
-                            <columnConstraints>
-                                <ColumnConstraints hgrow="ALWAYS" maxWidth="341.0" minWidth="267.0" prefWidth="270.0" />
-                                <ColumnConstraints hgrow="ALWAYS" maxWidth="268.0" minWidth="202.0" prefWidth="253.0" />
-                            </columnConstraints>
                             <rowConstraints>
                                 <RowConstraints maxHeight="275.0" minHeight="185.0" prefHeight="185.0" vgrow="ALWAYS" />
                                 <RowConstraints maxHeight="222.0" minHeight="35.0" prefHeight="183.0" vgrow="ALWAYS" />

@@ -2,6 +2,7 @@ package co.edu.uniquindio.agenciaviajes.agenciaviajes;
 
 import co.edu.uniquindio.agenciaviajes.agenciaviajes.controlador.*;
 import co.edu.uniquindio.agenciaviajes.agenciaviajes.modelo.Agencia;
+import co.edu.uniquindio.agenciaviajes.agenciaviajes.persistencia.Persistencia;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -20,10 +21,9 @@ public class MainAgencia extends Application {
     public void start(Stage stage) throws IOException {
         this.stage = stage;
 
-        agencia = Agencia.deserializar("C:\\Users\\Juan Jose\\OneDrive\\Escritorio\\Workspace java\\AgenciaViajes\\src\\main\\java\\co\\edu\\uniquindio\\agenciaviajes\\agenciaviajes\\archivo\\model.txt");  // Intentar cargar la instancia de Agencia desde el archivo
+        agencia = Persistencia.cargarRecursoHostalBinario();
 
         if (agencia == null) {
-            // Si falla la deserialización o el archivo no existe, crear una nueva instancia
             agencia = Agencia.obtenerInstancia();
         }
 
@@ -56,7 +56,7 @@ public class MainAgencia extends Application {
         stage.setTitle("Panel Administrador");
         stage.setScene(scene);
         stage.show();
-        serializarAgencia();
+        Persistencia.guardarRecursoDomainBinarioAgencia(agencia);
     }
 
     public void abrirPanelGestionGuia() throws IOException {
@@ -67,7 +67,7 @@ public class MainAgencia extends Application {
         stage.setTitle("Panel Gestion Guia Turistico");
         stage.setScene(scene);
         stage.show();
-        serializarAgencia();
+        Persistencia.guardarRecursoDomainBinarioAgencia(agencia);
     }
 
     public void abrirPanelGestionPaquete() throws IOException {
@@ -78,7 +78,7 @@ public class MainAgencia extends Application {
         stage.setTitle("Panel Gestion Paquete Turistico");
         stage.setScene(scene);
         stage.show();
-        serializarAgencia();
+        Persistencia.guardarRecursoDomainBinarioAgencia(agencia);
     }
 
     public void abrirPanelGestionDestino() throws IOException {
@@ -89,7 +89,7 @@ public class MainAgencia extends Application {
         stage.setTitle("Panel Gestion Destino");
         stage.setScene(scene);
         stage.show();
-        serializarAgencia();
+        Persistencia.guardarRecursoDomainBinarioAgencia(agencia);
     }
 
     public void abrirPanelRegistroCliente() throws IOException {
@@ -100,7 +100,7 @@ public class MainAgencia extends Application {
         stage.setTitle("Panel Registro Cliente");
         stage.setScene(scene);
         stage.show();
-        serializarAgencia();
+        Persistencia.guardarRecursoDomainBinarioAgencia(agencia);
     }
 
     public void abrirPanelCliente() throws IOException {
@@ -111,7 +111,7 @@ public class MainAgencia extends Application {
         stage.setTitle("Panel Registro Cliente");
         stage.setScene(scene);
         stage.show();
-        serializarAgencia();
+        Persistencia.guardarRecursoDomainBinarioAgencia(agencia);
     }
 
     public void abrirPanelVerDestinos() throws IOException {
@@ -122,7 +122,7 @@ public class MainAgencia extends Application {
         stage.setTitle("Panel VerDestinos");
         stage.setScene(scene);
         stage.show();
-        serializarAgencia();
+        Persistencia.guardarRecursoDomainBinarioAgencia(agencia);
     }
 
     // Métodos adicionales para la serialización automática
@@ -132,7 +132,7 @@ public class MainAgencia extends Application {
     }
 
     private void handleCloseRequest(WindowEvent event) {
-        serializarAgencia();
+        Persistencia.guardarRecursoDomainBinarioAgencia(agencia);
     }
 
 
